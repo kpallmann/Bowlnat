@@ -95,10 +95,37 @@ export default class Player {
                 //if neither up nor down are being pressed, or if both are being pressed, set to 0
                 this.player.setVelocityY(0)
             }
+            this.clampX()
+            this.clampY()
             
         }
     }
 
+
+    clampX()
+    {
+        console.log("EGG")
+        if(this.player.x > 484)
+        {
+            this.player.setX(484)
+        }
+        if(this.player.x < 16)
+        {
+            this.player.setX(16)
+        }
+    }
+
+    clampY()
+    {
+        if(this.player.y > 784)
+        {
+            this.player.setY(784)
+        }
+        if(this.player.y < 566)
+        {
+            this.player.setY(566)
+        }
+    }
 
 
 }
