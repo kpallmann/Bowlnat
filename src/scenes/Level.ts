@@ -1,7 +1,11 @@
 import Phaser from 'phaser'
+import Player from './Player'
 
 export default class Level extends Phaser.Scene
 {
+
+    private player;
+
 	constructor()
 	{
 		super('Level')
@@ -16,10 +20,15 @@ export default class Level extends Phaser.Scene
 
     create()
     {
-        this.physics.add.sprite(250, 700, "Player")
+        this.player = new Player(this, 250, 700)
         this.physics.add.sprite(250, 200, "Enemy")
         this.physics.add.sprite(250, 550, "Line")
 
+    }
+
+    update()
+    {
+        this.player.update();
     }
 
 }
